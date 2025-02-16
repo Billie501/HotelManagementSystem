@@ -5,13 +5,14 @@
 package Hotel.Management.System;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 /**
  *
  * @author billi
  */
-public class HotelManagementSystem extends JFrame {
+public class HotelManagementSystem extends JFrame implements ActionListener {
     
     HotelManagementSystem() {
        //setSize(1366, 665);
@@ -35,6 +36,7 @@ public class HotelManagementSystem extends JFrame {
        next.setBounds(1000, 360, 150, 50);
        next.setBackground(Color.WHITE);
        next.setForeground(Color.BLACK);
+       next.addActionListener(this);
        next.setFont(new Font("serif", Font.PLAIN, 24));
        image.add(next);
               
@@ -54,6 +56,11 @@ public class HotelManagementSystem extends JFrame {
                e.printStackTrace();
            }
        }
+    }
+    
+    public void actionPerformed(ActionEvent ae) {
+        setVisible(false);
+        new Login();
     }
     
     public static void main(String[] args) {
