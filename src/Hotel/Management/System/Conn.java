@@ -5,6 +5,10 @@
 package Hotel.Management.System;
 
 import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -12,18 +16,29 @@ import java.sql.*;
  */
 public class Conn {
     
+    
+    String url = "jdbc:mysql://localhost:3306/hotelmanagementsystem?useSSL=false";
+    String user = "root";
+    String password = "";
+    
+    
     Connection c;
     Statement s;
     
     Conn() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/");
-            s = c.createStatement();
-        } 
-        catch(Exception e) {
-            e.printStackTrace();
-        }
+        c = DriverManager.getConnection(url, user, password);
+        s = c.createStatement();
+        System.out.println("Database connected successfully!");
+    } catch (SQLException e) {
+        System.err.println("Database connection failed: " + e.getMessage());
+        e.printStackTrace();
     }
+    }
+
+    public static void main(String[] args) {
+        new Conn(); // Test connection
+    }
+    
     
 }
