@@ -22,7 +22,7 @@ public class AddEmployee extends JFrame implements ActionListener {
     AddEmployee() {
         setLayout(null);
         
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         JLabel lblname = new JLabel("Name");
         lblname.setBounds(60, 30, 120, 30);
