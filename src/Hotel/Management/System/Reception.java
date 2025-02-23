@@ -14,7 +14,7 @@ import java.awt.event.*;
  */
 public class Reception extends JFrame implements ActionListener {
     
-    JButton newCustomer;
+    JButton newCustomer, rooms, department, allEmployee, customers, managerInfo;
     
     Reception() {
         
@@ -34,34 +34,39 @@ public class Reception extends JFrame implements ActionListener {
         newCustomer.addActionListener(this);
         add(newCustomer);
         
-        JButton rooms = new JButton("Rooms");
+        rooms = new JButton("Rooms");
         rooms.setBounds(10, 70, 200, 30);
         rooms.setBackground(Color.BLACK);
         rooms.setForeground(Color.WHITE);
+        rooms.addActionListener(this);
         add(rooms);
         
-        JButton department = new JButton("Department");
+        department = new JButton("Department");
         department.setBounds(10, 110, 200, 30);
         department.setBackground(Color.BLACK);
         department.setForeground(Color.WHITE);
+        department.addActionListener(this);
         add(department);
         
-        JButton allEmployee = new JButton("Employees");
+        allEmployee = new JButton("Employees");
         allEmployee.setBounds(10, 150, 200, 30);
         allEmployee.setBackground(Color.BLACK);
         allEmployee.setForeground(Color.WHITE);
+        allEmployee.addActionListener(this);
         add(allEmployee);
         
-        JButton customers = new JButton("Customer Information");
+        customers = new JButton("Customer Information");
         customers.setBounds(10, 190, 200, 30);
         customers.setBackground(Color.BLACK);
         customers.setForeground(Color.WHITE);
+        customers.addActionListener(this);
         add(customers);
         
-        JButton managerInfo = new JButton("Manager Information");
+        managerInfo = new JButton("Manager Information");
         managerInfo.setBounds(10, 230, 200, 30);
         managerInfo.setBackground(Color.BLACK);
         managerInfo.setForeground(Color.WHITE);
+        managerInfo.addActionListener(this);
         add(managerInfo);
         
         JButton checkout = new JButton("Checkout");
@@ -113,12 +118,28 @@ public class Reception extends JFrame implements ActionListener {
     }
     
     public void actionPerformed(ActionEvent ae) {
-        
-        if(ae.getSource() == newCustomer) {
+
+        if (ae.getSource() == newCustomer) {
             setVisible(false);
             new AddCustomer();
+        } else if (ae.getSource() == rooms) {
+            setVisible(false);
+            new Room();
+        } else if (ae.getSource() == department) {
+            setVisible(false);
+            new Department();
+        } else if (ae.getSource() == allEmployee) {
+            setVisible(false);
+            new EmployeeInfo();
+        } else if (ae.getSource() == customers) {
+            setVisible(false);
+            new CustomerInfo();
+        } else if (ae.getSource() == managerInfo) {
+            setVisible(false);
+            new ManagerInfo();
         }
-    }
+
+    }    
     
     public static void main(String[] args) {
         new Reception();
