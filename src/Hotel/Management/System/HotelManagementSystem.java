@@ -42,20 +42,20 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
               
        setVisible(true);
        
-       while(true) {
-           text.setVisible(false);
-           try {
-               Thread.sleep(500);
-           } catch (Exception e) {
-               e.printStackTrace();
-           }
-           text.setVisible(true);
-           try {
-               Thread.sleep(500);
-           } catch (Exception e) {
-               e.printStackTrace();
-           }
-       }
+//       while(true) {
+//           text.setVisible(false);
+//           try {
+//               //Thread.sleep(1000);
+//           } catch (Exception e) {
+//               e.printStackTrace();
+//           }
+//           text.setVisible(true);
+//           try {
+//               //Thread.sleep(1000);
+//           } catch (Exception e) {
+//               e.printStackTrace();
+//           }
+//       }
     }
     
     public void actionPerformed(ActionEvent ae) {
