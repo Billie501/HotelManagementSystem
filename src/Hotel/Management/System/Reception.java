@@ -14,7 +14,7 @@ import java.awt.event.*;
  */
 public class Reception extends JFrame implements ActionListener {
     
-    JButton newCustomer, rooms, department, allEmployee, customers, managerInfo, searchRoom, update, roomStatus;
+    JButton newCustomer, rooms, department, allEmployee, customers, managerInfo, searchRoom, update, roomStatus, pickup;
     
     Reception() {
         
@@ -90,10 +90,11 @@ public class Reception extends JFrame implements ActionListener {
         roomStatus.addActionListener(this);
         add(roomStatus);
         
-        JButton pickup = new JButton("Pickup Service");
+        pickup = new JButton("Pickup Service");
         pickup.setBounds(10, 390, 200, 30);
         pickup.setBackground(Color.BLACK);
         pickup.setForeground(Color.WHITE);
+        pickup.addActionListener(this);
         add(pickup);
         
         searchRoom = new JButton("Search Room");
@@ -150,6 +151,9 @@ public class Reception extends JFrame implements ActionListener {
         } else if (ae.getSource() == roomStatus) {
             setVisible(false);
             new UpdateRoom();
+        } else if (ae.getSource() == pickup) {
+            setVisible(false);
+            new Pickup();
         }
 
     }    
